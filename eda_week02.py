@@ -77,7 +77,7 @@ path = ("/content/SampleWork.xlsx")
 #read sheet 1, skip row 2, select first and last columns, use row 2 as header
 df = pd.read_excel(path, sheet_name=0, skiprows=1, usecols=[0, -1], header=1)
 #exporting the processed data as a new sheet named "NewSheet" within the same Excel file
-writer = pd.ExcelWriter(file_path, engine='openpyxl', mode='a')
+writer = pd.ExcelWriter(path, engine='openpyxl', mode='a')
 df.to_excel(writer, sheet_name='New_Sheet', index=False)
 writer.save()
 print("Data successfully exported!")
